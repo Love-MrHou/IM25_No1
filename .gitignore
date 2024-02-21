@@ -20,7 +20,8 @@
 
 # Visual Studio cache directory
 .vs/
-
+# Ignore Visual Studio configuration file
+.vsconfig  
 # Gradle cache directory
 .gradle/
 
