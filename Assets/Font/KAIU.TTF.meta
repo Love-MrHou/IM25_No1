@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aa1c314103c77214ea125e8db582dfc9
+guid: f9d22d75e9b8ad04ea0dfe0182c295c2
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Noto Sans TC
+  - DFKai-SB
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
