@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UV : MonoBehaviour
+public class sit_animation : MonoBehaviour
 {
     private CharacterController _character;
     private Animator _animator;
