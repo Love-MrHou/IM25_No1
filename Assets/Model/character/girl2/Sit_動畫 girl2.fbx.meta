@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1cbdc8bc36951e7499012fa3db9e0534
+guid: bb20b6a7453b58447be248fc0f2b2ce2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: WalkingInPlace
-      takeName: Armature.001|Walking|Armature|mixamo.com
-      internalID: -4743774296719457794
+      name: mixamo.com
+      takeName: mixamo.com
+      internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 77
+      lastFrame: 178
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

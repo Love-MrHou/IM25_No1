@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4bcfe7cfef3cca746b5e76feb1d45828
+guid: 9e2dd6ccca2c89d43b19e33d024c0368
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature.001|Armature|mixamo.com|Layer0.005 Retarget
-      takeName: Armature.001|Armature|mixamo.com|Layer0.005 Retarget
-      internalID: -4940421971289595692
+      name: Sitting Idle
+      takeName: mixamo.com
+      internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 299
+      lastFrame: 178
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
