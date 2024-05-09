@@ -67,4 +67,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+# Exclude meta files in specific folders
+!/Assets/Model/**/*.meta
+!/Assets/Studio_2.fbm/**/*.meta
 
