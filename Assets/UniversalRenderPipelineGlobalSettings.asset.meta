@@ -1,8 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/UniversalRenderPipelineGlobalSettings.asset.meta
 guid: f76762b8f63d6934d8f33ba05fbe2253
 NativeFormatImporter:
+========
+guid: 9fc0d4010bbf28b4594072e72b8655ab
+DefaultImporter:
+>>>>>>>> Stashed changes:Assets/Scenes/Practice.unity.meta
   externalObjects: {}
-  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
