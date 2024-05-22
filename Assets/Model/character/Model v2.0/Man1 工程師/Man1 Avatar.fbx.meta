@@ -1,9 +1,34 @@
 fileFormatVersion: 2
-guid: 647f7e0b5b6949849af9bb68f9c36f68
+guid: 443a365798dc1ba40a70f5bf56ee5827
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Man1_AvatarBody
+    second: {fileID: 2100000, guid: bc298b947cfd8744d9610d9bf82861f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Man1_AvatarHead
+    second: {fileID: 2100000, guid: 94e9247db7c9d3f46a44f5aad39a44d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Man1_AvatarLeftCornea
+    second: {fileID: 2100000, guid: c4d157deafc79234b898ebb10663b54f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Man1_AvatarRightCornea
+    second: {fileID: 2100000, guid: 0a6636bc1ecbab947a7b7c6bafa47137, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Man1_outfit
+    second: {fileID: 2100000, guid: 777e23ef4474cd74fa6271056c56e4c9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -77,11 +102,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - 2b00f1a1d8e24bc4fb985627715200e7
-  - 34e714505bb86d142b62e43bb9794dc0
-  - 2ccf90751322ce846937a1bf48020408
-  - 877a2e7566f0fdb41a0384b88c635677
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3

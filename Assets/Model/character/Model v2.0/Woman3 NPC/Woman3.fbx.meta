@@ -1,34 +1,9 @@
 fileFormatVersion: 2
-guid: dbae75d337598d549a970fe8b7922281
+guid: d811076db2302404cada22eb410a1048
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Woman3_AvatarBody
-    second: {fileID: 2100000, guid: 26cdb5323494bfc4196871720928ced4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Woman3_AvatarHead
-    second: {fileID: 2100000, guid: d895becbfa6f71a40ba39c5f72e22dee, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Woman3_AvatarLeftCornea
-    second: {fileID: 2100000, guid: ef36423693c72f445888cae6abdb2603, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Woman3_AvatarRightCornea
-    second: {fileID: 2100000, guid: 3344bb604abd4424d8e9196eee37b43a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Woman3_Woman3_outfit
-    second: {fileID: 2100000, guid: 25ac8dd792de0b04e9115b9d11812aad, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -124,7 +99,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0

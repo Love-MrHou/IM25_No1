@@ -1,44 +1,9 @@
 fileFormatVersion: 2
-guid: fa6cf17013172b84599c9facd79db0bf
+guid: 792b6f729ab4ef843827d23856d597f2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Woman4_AvatarBody
-    second: {fileID: 2100000, guid: 1682ae248a20f06408d74ce2dfd977ec, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Woman4_AvatarHead
-    second: {fileID: 2100000, guid: 86c92cbd064f51a478f7b1dd759e3efa, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Woman4_AvatarLeftCornea
-    second: {fileID: 2100000, guid: 8add475b8560f53459bd7b105787a5cf, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Woman4_AvatarRightCornea
-    second: {fileID: 2100000, guid: 0c916cbf23a7dbd4699ace1d4285cb5b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Woman4_outfit_bottom
-    second: {fileID: 2100000, guid: e974cf65b95f8d048ad677c1437cab4c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Woman4_outfit_shoes
-    second: {fileID: 2100000, guid: 6b0cd433968447e4caea556253e0c65a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Woman4_outfit_top
-    second: {fileID: 2100000, guid: 2a5b8e41b193b25429eb8895a7bff564, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -134,7 +99,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
