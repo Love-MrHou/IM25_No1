@@ -197,20 +197,50 @@
             },
             {
                "inputs" : {
-                  "position" : {
-                     "output" : "/actions/default/in/moveplayer"
+                  "center" : {
+                     "output" : "/actions/default/in/teleport"
+                  },
+                  "east" : {
+                     "output" : "/actions/default/in/snapturnright"
+                  },
+                  "north" : {
+                     "output" : "/actions/default/in/teleport"
+                  },
+                  "south" : {
+                     "output" : "/actions/default/in/teleport"
+                  },
+                  "west" : {
+                     "output" : "/actions/default/in/snapturnleft"
                   }
                },
-               "mode" : "trackpad",
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
                "path" : "/user/hand/left/input/trackpad"
             },
             {
                "inputs" : {
-                  "position" : {
-                     "output" : "/actions/default/in/moveplayer"
+                  "center" : {
+                     "output" : "/actions/default/in/teleport"
+                  },
+                  "east" : {
+                     "output" : "/actions/default/in/snapturnright"
+                  },
+                  "north" : {
+                     "output" : "/actions/default/in/teleport"
+                  },
+                  "south" : {
+                     "output" : "/actions/default/in/teleport"
+                  },
+                  "west" : {
+                     "output" : "/actions/default/in/snapturnleft"
                   }
                },
-               "mode" : "trackpad",
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
                "path" : "/user/hand/right/input/trackpad"
             }
          ]
