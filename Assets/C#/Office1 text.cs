@@ -18,8 +18,7 @@ public class Office1text : MonoBehaviour
 
         if (inkAsset == null)
         {
-            //Debug.LogError("Ink Asset is not assigned in the inspector.");
-            Debug.LogError($"UI '{transform.parent.name}': {gameObject.name} is missing the Ink Asset assignment in the inspector.");
+            Debug.LogError("Ink Asset is not assigned in the inspector.");
             return;
         }
 
@@ -57,13 +56,6 @@ public class Office1text : MonoBehaviour
     public void NextDialog()
     {
         if (story == null) return;
-
-        if (!story.canContinue && story.currentChoices.Count == 0)
-        {
-            Debug.Log("Dialog End");
-            story = null;
-            return;
-        }
 
         if (story.canContinue)
         {

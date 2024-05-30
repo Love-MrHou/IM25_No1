@@ -46,7 +46,7 @@ public class DialogManger : MonoBehaviour
         for (int i = 0; i < story.currentChoices.Count; i++)
         {
             buttons[i].gameObject.SetActive(true);
-            buttons[i].GetComponentInChildren<TextMeshProUGUI>().text = story.currentChoices[i].text; //把story文本內的選項貼到按鈕的text
+            buttons[i].GetComponentInChildren<Text>().text = story.currentChoices[i].text; //把story文本內的選項貼到按鈕的text
         }
     }
 
