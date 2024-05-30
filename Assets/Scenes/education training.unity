@@ -1124,7 +1124,7 @@ MonoBehaviour:
   buttons:
   - {fileID: 2916790497938360589}
   - {fileID: 1766758220486600123}
-  - {fileID: 0}
+  - {fileID: 7887149162461270492}
   _inkAssets: {fileID: 4900000, guid: 36a83a8607b43b744bcd6cbc4fb1a213, type: 3}
 --- !u!4 &641062228
 Transform:
@@ -3043,7 +3043,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1777307643293715959}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 641062227}
+        m_TargetAssemblyTypeName: DialogManger, Assembly-CSharp
+        m_MethodName: MakeChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1777307643293715959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3216,7 +3228,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7060234573550582373}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 641062227}
+        m_TargetAssemblyTypeName: DialogManger, Assembly-CSharp
+        m_MethodName: MakeChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &3223813968352041360
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3764,7 +3788,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5627804136327406924}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 641062227}
+        m_TargetAssemblyTypeName: DialogManger, Assembly-CSharp
+        m_MethodName: NextDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!223 &6886745938489079052
 Canvas:
   m_ObjectHideFlags: 0
@@ -3941,7 +3977,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4025633032457106198}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 641062227}
+        m_TargetAssemblyTypeName: DialogManger, Assembly-CSharp
+        m_MethodName: MakeChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8208261845676884457
 MonoBehaviour:
   m_ObjectHideFlags: 0
