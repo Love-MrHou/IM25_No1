@@ -57,13 +57,6 @@ public class Office1text : MonoBehaviour
     {
         if (story == null) return;
 
-        if (!story.canContinue && story.currentChoices.Count == 0)
-        {
-            Debug.Log("Dialog End");
-            story = null;
-            return;
-        }
-
         if (story.canContinue)
         {
             dialogText.text = story.Continue();
