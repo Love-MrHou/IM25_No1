@@ -693,24 +693,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6448c88be0a12854c928c5179bb048ac, type: 3}
   m_PrefabInstance: {fileID: 1091378791}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &555960918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555960917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68150edd2a58e3848ae460893b9a8bcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idleMinTime: 5
-  idleMaxTime: 8
-  talkingMinTime: 5
-  talkingMaxTime: 15
-  roamRadius: 10
-  collisionCooldown: 3
 --- !u!195 &555960919
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -786,24 +768,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dc7fa2897e4357548867673b7c79827f, type: 3}
   m_PrefabInstance: {fileID: 1725693555}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &659626461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 659626460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68150edd2a58e3848ae460893b9a8bcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idleMinTime: 3
-  idleMaxTime: 8
-  talkingMinTime: 5
-  talkingMaxTime: 15
-  roamRadius: 10
-  collisionCooldown: 3
 --- !u!195 &659626462
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2978,16 +2942,34 @@ PrefabInstance:
       addedObject: {fileID: 555960919}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6448c88be0a12854c928c5179bb048ac, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 555960918}
+      addedObject: {fileID: 555960923}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6448c88be0a12854c928c5179bb048ac, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 555960923}
+      addedObject: {fileID: 1091378793}
   m_SourcePrefab: {fileID: 100100000, guid: 6448c88be0a12854c928c5179bb048ac, type: 3}
 --- !u!4 &1091378792 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6448c88be0a12854c928c5179bb048ac, type: 3}
   m_PrefabInstance: {fileID: 1091378791}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1091378793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555960917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a6887f3b4feff41997343d5c4f725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleMinTime: 5
+  idleMaxTime: 8
+  talkingMinTime: 5
+  talkingMaxTime: 15
+  roamRadius: 10
+  collisionCooldown: 15
 --- !u!1001 &1195947627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4393,16 +4375,34 @@ PrefabInstance:
       addedObject: {fileID: 659626462}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dc7fa2897e4357548867673b7c79827f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 659626461}
+      addedObject: {fileID: 659626466}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dc7fa2897e4357548867673b7c79827f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 659626466}
+      addedObject: {fileID: 1725693557}
   m_SourcePrefab: {fileID: 100100000, guid: dc7fa2897e4357548867673b7c79827f, type: 3}
 --- !u!4 &1725693556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dc7fa2897e4357548867673b7c79827f, type: 3}
   m_PrefabInstance: {fileID: 1725693555}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1725693557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659626460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a6887f3b4feff41997343d5c4f725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleMinTime: 5
+  idleMaxTime: 8
+  talkingMinTime: 5
+  talkingMaxTime: 15
+  roamRadius: 10
+  collisionCooldown: 15
 --- !u!1001 &1778881406
 PrefabInstance:
   m_ObjectHideFlags: 0
