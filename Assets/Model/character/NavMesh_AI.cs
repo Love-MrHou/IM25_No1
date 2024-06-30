@@ -30,6 +30,7 @@ public partial class NavMesh_AI : MonoBehaviour
 
     void Start()
     {
+        //Time.timeScale = 3;
         // 自主導航: 初始化NavMeshAgent
         agent = GetComponent<NavMeshAgent>();
 
