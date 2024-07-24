@@ -9,7 +9,7 @@ using Newtonsoft.Json.Serialization;
 using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
 using System.Threading.Tasks;
-
+using System;
 public class GPTManager2 : MonoBehaviour
 {
     public Text gptOutputText;
@@ -22,7 +22,7 @@ public class GPTManager2 : MonoBehaviour
 
     void Start()
     {
-        api = new OpenAIAPI("更改為OPENAI 的API"); //更改為OPENAI 的API
+        api = new OpenAIAPI("//更改為OPENAI 的API"); //更改為OPENAI 的API
         var settings = new JsonSerializerSettings
         {
             ContractResolver = new DefaultContractResolver
@@ -63,67 +63,81 @@ public class GPTManager2 : MonoBehaviour
         new ChatMessage(ChatMessageRole.User, userInput)
     };
 
-        var chatResult = await api.Chat.CreateChatCompletionAsync(new ChatRequest()
+        try
         {
-            Model = Model.ChatGPTTurbo,
-            Temperature = 0.9,
-            MaxTokens = 100,
-            Messages = messages
-        });
-
-        if (chatResult != null && chatResult.Choices != null && chatResult.Choices.Count > 0)
-        {
-            string gptResponse = chatResult.Choices[0].Message.Content;
-
-            if (gptOutputText != null)
+            var chatResult = await api.Chat.CreateChatCompletionAsync(new ChatRequest()
             {
-                gptOutputText.text = gptResponse;
+                Model = Model.ChatGPTTurbo,
+                Temperature = 0.9,
+                MaxTokens = 100,
+                Messages = messages
+            });
 
-                await TextToSpeech(gptResponse);
+            if (chatResult != null && chatResult.Choices != null && chatResult.Choices.Count > 0)
+            {
+                string gptResponse = chatResult.Choices[0].Message.Content;
+
+                if (gptOutputText != null)
+                {
+                    gptOutputText.text = gptResponse;
+                    await TextToSpeech(gptResponse);
+                }
+                else
+                {
+                    Debug.LogError("gptOutputText property is null! Assign a UI Text element to it.");
+                }
             }
             else
             {
-                Debug.LogError("gptOutputText property is null! Assign a UI Text element to it.");
+                Debug.LogError("Failed to get valid response from GPT.");
             }
         }
-        else
+        catch (Exception ex)
         {
-            Debug.LogError("Failed to get valid response from GPT.");
+            Debug.LogError($"Error during OpenAI API call: {ex.Message}");
         }
 
-        isSpeaking = false; 
+        isSpeaking = false;
     }
 
     private async Task TextToSpeech(string text)
     {
-        var result = await synthesizer.SpeakTextAsync(text);
-
-        if (result.Reason == ResultReason.SynthesizingAudioCompleted)
+        try
         {
-            var sampleCount = result.AudioData.Length / 2;
-            var audioData = new float[sampleCount];
-            for (var i = 0; i < sampleCount; ++i)
+            var result = await synthesizer.SpeakTextAsync(text);
+
+            if (result.Reason == ResultReason.SynthesizingAudioCompleted)
             {
-                audioData[i] = (short)(result.AudioData[i * 2 + 1] << 8 | result.AudioData[i * 2]) / 32768.0F;
+                var sampleCount = result.AudioData.Length / 2;
+                var audioData = new float[sampleCount];
+                for (var i = 0; i < sampleCount; ++i)
+                {
+                    audioData[i] = (short)(result.AudioData[i * 2 + 1] << 8 | result.AudioData[i * 2]) / 32768.0F;
+                }
+
+                var audioClip = AudioClip.Create("SynthesizedAudio", sampleCount, 1, 16000, false);
+                audioClip.SetData(audioData, 0);
+
+                audioSource.clip = audioClip;
+                audioSource.Play();
+
+                Debug.Log("Speech synthesis succeeded!");
             }
-
-            var audioClip = AudioClip.Create("SynthesizedAudio", sampleCount, 1, 16000, false);
-            audioClip.SetData(audioData, 0);
-
-            audioSource.clip = audioClip;
-            audioSource.Play();
-
-            Debug.Log("Speech synthesis succeeded!");
+            else if (result.Reason == ResultReason.Canceled)
+            {
+                var cancellation = SpeechSynthesisCancellationDetails.FromResult(result);
+                Debug.LogError($"Speech synthesis canceled: {cancellation.ErrorDetails}");
+            }
         }
-        else if (result.Reason == ResultReason.Canceled)
+        catch (Exception ex)
         {
-            var cancellation = SpeechSynthesisCancellationDetails.FromResult(result);
-            Debug.LogError($"Speech synthesis canceled: {cancellation.ErrorDetails}");
+            Debug.LogError($"Error during speech synthesis: {ex.Message}");
         }
-
-        isSpeaking = false; 
+        finally
+        {
+            isSpeaking = false;
+        }
     }
-
     private void OnDestroy()
     {
         synthesizer.Dispose();
