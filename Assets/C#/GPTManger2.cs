@@ -10,6 +10,7 @@ using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
 using System.Threading.Tasks;
 using System;
+using CandyCoded.env;
 public class GPTManager2 : MonoBehaviour
 {
     public Text gptOutputText;
@@ -22,7 +23,17 @@ public class GPTManager2 : MonoBehaviour
 
     void Start()
     {
-        api = new OpenAIAPI("//更改為OPENAI 的API"); //更改為OPENAI 的API
+        // 讀取OpenAI API密鑰
+        if (env.TryParseEnvironmentVariable("OPENAIAPI", out string openAiApiKey))
+        {
+            api = new OpenAIAPI(openAiApiKey);
+        }
+        else
+        {
+            Debug.LogError("Failed to read OpenAI API key from environment variables.");
+            return;
+        }
+        // 設置Json序列化設置
         var settings = new JsonSerializerSettings
         {
             ContractResolver = new DefaultContractResolver
@@ -34,11 +45,20 @@ public class GPTManager2 : MonoBehaviour
 
         JsonConvert.DefaultSettings = () => settings;
 
-        var config = SpeechConfig.FromSubscription("更改為AZURE的API以及區域", "更改為AZURE的API以及區域"); // 更改為AZURE的API以及區域
-        config.SpeechSynthesisLanguage = "zh-TW";
-        config.SpeechSynthesisVoiceName = "zh-CN-XiaoyouNeural";
-        var audioConfig = AudioConfig.FromDefaultSpeakerOutput();
-        synthesizer = new SpeechSynthesizer(config, audioConfig);
+        // 讀取Azure API密鑰和區域
+        if (env.TryParseEnvironmentVariable("AZUREAPI", out string azureApiKey) && env.TryParseEnvironmentVariable("AZURE", out string azureRegion))
+        {
+            var config = SpeechConfig.FromSubscription(azureApiKey, azureRegion);
+            config.SpeechSynthesisLanguage = "zh-TW";
+            config.SpeechSynthesisVoiceName = "zh-CN-XiaoyouNeural";
+            var audioConfig = AudioConfig.FromDefaultSpeakerOutput();
+            synthesizer = new SpeechSynthesizer(config, audioConfig);
+        }
+        else
+        {
+            Debug.LogError("Failed to read Azure API key or region from environment variables.");
+            return;
+        }
     }
 
     public async void ProcessInputFromText()
@@ -58,10 +78,16 @@ public class GPTManager2 : MonoBehaviour
         }
 
         List<ChatMessage> messages = new List<ChatMessage>
-    {
-        new ChatMessage(ChatMessageRole.System, characterIntroduction),
-        new ChatMessage(ChatMessageRole.User, userInput)
-    };
+        {
+            new ChatMessage(ChatMessageRole.System, characterIntroduction),
+            new ChatMessage(ChatMessageRole.User, userInput)
+        };
+
+        // 處理API調用的邏輯
+        // 這裡您需要使用api來處理OpenAI的請求，並使用synthesizer來處理Azure的語音合成
+
+        isSpeaking = false;
+
 
         try
         {
