@@ -282,6 +282,12 @@
         "com.unity.xr.legacyinputhelpers": "2.1.4"
       }
     },
+    "xyz.candycoded.env": {
+      "version": "file:C:/Users/USER/Downloads/env-1.1.2",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
