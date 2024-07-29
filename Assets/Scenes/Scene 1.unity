@@ -442,7 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73425344979cba54cacea3ea2d2962c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canva: {fileID: 0}
+  Canva: {fileID: 1914559638}
 --- !u!65 &409480066
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -462,8 +462,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.226105, y: 5.722231, z: 4.360645}
-  m_Center: {x: 1.0597054, y: 2.361105, z: 1.6803153}
+  m_Size: {x: 8.083115, y: 6.273344, z: 4.2727733}
+  m_Center: {x: 0.98820835, y: 2.6366615, z: 1.6363809}
 --- !u!1 &491260421
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +590,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 699322630}
     m_Modifications:
+    - target: {fileID: 4067010772834806900, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 5036331174826500537, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -850,6 +854,10 @@ PrefabInstance:
       propertyPath: _inkAssets
       value: 
       objectReference: {fileID: 4900000, guid: 4b8330c8dd95da84cb23c9d8bb2b713d, type: 3}
+    - target: {fileID: 4067010772834806900, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 5036331174826500537, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1206,6 +1214,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 699322630}
     m_Modifications:
+    - target: {fileID: 63985403634300528, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067010772834806900, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 5036331174826500537, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1298,10 +1314,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u7CFB\u7D71\u5206\u6790\u5E2B \u5C0D\u8A71\u6846"
       objectReference: {fileID: 0}
+    - target: {fileID: 7315170453655804702, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7315170453655804702, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1914559643}
   m_SourcePrefab: {fileID: 100100000, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
 --- !u!224 &835144221 stripped
 RectTransform:
@@ -1320,6 +1343,10 @@ PrefabInstance:
       propertyPath: _inkAssets
       value: 
       objectReference: {fileID: 4900000, guid: 4b8330c8dd95da84cb23c9d8bb2b713d, type: 3}
+    - target: {fileID: 4067010772834806900, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 5036331174826500537, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2982,6 +3009,10 @@ PrefabInstance:
       propertyPath: _inkAssets
       value: 
       objectReference: {fileID: 4900000, guid: 5c934fd3d4863ff458f6a5ba19e48649, type: 3}
+    - target: {fileID: 4067010772834806900, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 5036331174826500537, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4663,6 +4694,10 @@ PrefabInstance:
       propertyPath: _inkAssets
       value: 
       objectReference: {fileID: 4900000, guid: b3e9e14355425224f97d189f26d3de5c, type: 3}
+    - target: {fileID: 4067010772834806900, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 5036331174826500537, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4875,6 +4910,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u7CFB\u7D71\u5206\u6790\u5E2B"
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 448423657ec119e45aecc0f9b59ac17e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4897,6 +4936,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 448423657ec119e45aecc0f9b59ac17e, type: 3}
   m_PrefabInstance: {fileID: 1892885028}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1914559638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7315170453655804702, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
+  m_PrefabInstance: {fileID: 835144220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1914559643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914559638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9cab6524c3d39f43ac04be475621749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speakTextFile: {fileID: 4900000, guid: 29e80a1e13f1fb14ea8e4a90f6c02690, type: 3}
 --- !u!1 &1939780698 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7046558643129667732, guid: 448423657ec119e45aecc0f9b59ac17e, type: 3}
@@ -6250,6 +6307,10 @@ PrefabInstance:
       propertyPath: _inkAssets
       value: 
       objectReference: {fileID: 4900000, guid: 51fb4bcbd87eab24aae0a924cd9e06f3, type: 3}
+    - target: {fileID: 4067010772834806900, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 5036331174826500537, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

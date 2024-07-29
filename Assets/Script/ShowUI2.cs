@@ -1,31 +1,48 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ShowUI2 : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject Canva;
+    private AzureSpeechSynthesizer speechSynthesizer;
+
     void Start()
     {
         Canva.SetActive(false);
-    }
-
-    // Update is called once per frame
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player")) // ½T«O¥u¦³ª±®aÄ²µo
+        speechSynthesizer = Canva.GetComponent<AzureSpeechSynthesizer>();
+        if (speechSynthesizer == null)
         {
-            Canva.SetActive(true);
+            Debug.LogError("AzureSpeechSynthesizer component is not attached to the Canva object.");
+        }
+        else
+        {
+            speechSynthesizer.enabled = false; // åˆå§‹æ—¶ç¦ç”¨
         }
     }
 
-    // ·íª±®aÂ÷¶}Ä²µo°Ï°ì®É½Õ¥Î
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player")) // ç¡®ä¿åªæœ‰ç©å®¶è§¦å‘
+        {
+            Canva.SetActive(true);
+            if (speechSynthesizer != null)
+            {
+                speechSynthesizer.enabled = true; // å¯ç”¨è„šæœ¬
+                speechSynthesizer.TriggerSpeech(); // å¼€å§‹è¯­éŸ³æ’­æ”¾
+            }
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player")) // ½T«O¥u¦³ª±®aÄ²µo
+        if (other.CompareTag("Player")) // ç¡®ä¿åªæœ‰ç©å®¶è§¦å‘
         {
             Canva.SetActive(false);
+            if (speechSynthesizer != null)
+            {
+                speechSynthesizer.enabled = false; // ç¦ç”¨è„šæœ¬
+            }
         }
     }
 }
