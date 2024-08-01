@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 177216833}
   - component: {fileID: 177216832}
   - component: {fileID: 177216831}
+  - component: {fileID: 177216834}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -191,6 +192,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &177216834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177216830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d38fc35907e9cb94a851596181d08beb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &245255197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -403,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73425344979cba54cacea3ea2d2962c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canva: {fileID: 0}
+  Canva: {fileID: 2082446271}
 --- !u!1 &409480062 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 448423657ec119e45aecc0f9b59ac17e, type: 3}
@@ -464,6 +477,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.083115, y: 6.273344, z: 4.2727733}
   m_Center: {x: 0.98820835, y: 2.6366615, z: 1.6363809}
+--- !u!1 &485283929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7315170453655804702, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
+  m_PrefabInstance: {fileID: 908057063}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &491260421
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,7 +1012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73425344979cba54cacea3ea2d2962c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canva: {fileID: 0}
+  Canva: {fileID: 2130817126}
 --- !u!1 &699322629
 GameObject:
   m_ObjectHideFlags: 0
@@ -6256,6 +6274,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2f1fb138cf1e5d54da9f3e5d890a23e5, type: 3}
   m_PrefabInstance: {fileID: 2022447324}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2082446271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7315170453655804702, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
+  m_PrefabInstance: {fileID: 2108886300}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2085503064 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f1fb138cf1e5d54da9f3e5d890a23e5, type: 3}
@@ -6294,7 +6317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73425344979cba54cacea3ea2d2962c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canva: {fileID: 0}
+  Canva: {fileID: 485283929}
 --- !u!1001 &2108886300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6404,6 +6427,11 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5036331174826500537, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
   m_PrefabInstance: {fileID: 2108886300}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2130817126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7315170453655804702, guid: b40ba93a8a55e0f46a20d9578ee502a7, type: 3}
+  m_PrefabInstance: {fileID: 1195947627}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2139007106
 PrefabInstance:
