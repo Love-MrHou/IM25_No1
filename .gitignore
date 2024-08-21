@@ -72,3 +72,6 @@ crashlytics-build.properties
 !/Assets/Studio_2.fbm/**/*.meta
 # Ignore .env files
 .env
+//將 LFS 檔案移動到 Azure Blob Storage
+add_to_dvc.bat
+lfs_files.txt
