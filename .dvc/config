@@ -4,4 +4,4 @@
 ['remote "myremote"']
     url = azure://lfs-container
     account_name = ${AZURE_STORAGE_ACCOUNT_NAME}
-    account_key = ${AZURE_STORAGE_ACCOUNT_KEY}
+    account_key = ${AZURE_STORAGE_KEY}
