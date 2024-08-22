@@ -1,0 +1,35 @@
+name: CI Pipeline  # 定義工作流程的名稱
+
+on:
+  push:
+    branches:
+      - main  # 當代碼推送到主分支時觸發此工作流程
+  pull_request:
+    branches:
+      - main  # 當有針對主分支的拉取請求時觸發此工作流程
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # 工作流程將在最新的Ubuntu環境上運行
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # 檢出代碼庫中的代碼
+
+    - name: Set up Python
+      uses: actions/setup-python@v2  # 設置Python環境
+      with:
+        python-version: '3.8'  # 使用Python 3.8版本
+
+    - name: Install DVC
+      run: pip install dvc[azure]  # 安裝DVC（Data Version Control）並支援Azure Blob Storage
+
+    - name: Pull DVC files
+      run: dvc pull  # 從DVC儲存庫中提取最新的檔案
+
+    - name: Run tests
+      run: python -m unittest discover  # 運行單元測試以驗證代碼的正確性
+
+    - name: Push DVC files
+      if: github.event_name == 'push'  # 只有在代碼推送事件中才會執行這一步
+      run: dvc push  # 將最新的DVC檔案推送到Azure Blob Storage
