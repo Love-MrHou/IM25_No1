@@ -72,7 +72,13 @@ crashlytics-build.properties
 !/Assets/Studio_2.fbm/**/*.meta
 # Ignore .env files
 .env
-//�N LFS �ɮײ��ʨ� Azure Blob Storage
+# test file for Azure Blob Storage
 add_to_dvc.bat
 lfs_files.txt
 add_to_dvc.sh
+# ignore DVC
+.dvc/cache/
+.dvc/tmp/
+.dvc/config.local
+# track DVC 
+!*.dvc
