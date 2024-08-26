@@ -324,10 +324,11 @@
       }
     },
     "xyz.candycoded.env": {
-      "version": "file:C:/Users/pzps0/Downloads/env-1.1.2/env-1.1.2",
+      "version": "https://github.com/CandyCoded/env.git",
       "depth": 0,
-      "source": "local",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "4bc9e79aa67534214392b5d91d9eda60613767d9"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
