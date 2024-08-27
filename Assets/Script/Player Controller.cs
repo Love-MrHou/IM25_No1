@@ -20,19 +20,19 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.TryGetComponent<ShowUI>(out ShowUI showUI))
-        {
-            Debug.Log("Enter");
-            showUI.PlayerEnter();
-        }
+        //if (other.transform.TryGetComponent<ShowUI>(out ShowUI showUI))
+        //{
+        //    Debug.Log("Enter");
+        //    showUI.PlayerEnter();
+        //}
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.TryGetComponent<ShowUI>(out ShowUI showUI))
-        {
-            Debug.Log("Exit");
-            showUI.PlayeExit();
-        }
+        //if (other.transform.TryGetComponent<ShowUI>(out ShowUI showUI))
+        //{
+        //    Debug.Log("Exit");
+        //    showUI.PlayeExit();
+        //}
     }
 }
