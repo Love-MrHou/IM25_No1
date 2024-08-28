@@ -1,52 +1,54 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ShowDetailsSystemAnalysis : MonoBehaviour
 {
-    public Sprite[] sprites;
-    public Image imageDisplay;
+    public Sprite[] sprites; //依序顯示的圖片
+    public Image imageDisplay; //要顯示的image的位置
+    public Button nextButton; //切換圖片的按鈕
+    public Canvas currentCanvas; //顯示圖片的canva
+    public Canvas additionalCanvas; //顯示三個ui的canva
 
-    private int currentIndex = 0;
-    private int previousIndex = -1; //上一張圖片的索引值
+    private int currentIndex = 0; //用來顯示目前圖片
+    private int previousIndex = -1; //用來隱藏上一張圖片
 
     void Start()
     {
-        // Display the first sprite
         ShowSprite(currentIndex);
+        nextButton.onClick.AddListener(OnButtonClick);
+        additionalCanvas.gameObject.SetActive(false);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    void OnButtonClick()
     {
         if (previousIndex != -1)
         {
             HideSprite(previousIndex); //隱藏上一張圖片
         }
 
-        currentIndex = (currentIndex + 1) ; //下一張圖片的index
+        currentIndex++; //顯示的圖片索引值+1
 
-        ShowSprite(currentIndex);
-        if (currentIndex == sprites.Length) // 顯示完所有圖片切換場景
+        if (currentIndex < sprites.Length) //如果還有圖片要顯示
         {
-            SceneManager.LoadScene("Education Training");
+            ShowSprite(currentIndex); //顯示現在的圖片
+        }
+        else
+        {
+            additionalCanvas.gameObject.SetActive(true); // 把顯示社交軟體的canva顯示
+            currentCanvas.gameObject.SetActive(false); // 把顯示圖片的canva隱藏
         }
     }
 
     void ShowSprite(int index)
     {
-        // Display the sprite at the given index
-        imageDisplay.sprite = sprites[index]; //顯示下一張圖片
-        imageDisplay.enabled = true;
-
-        // Update the previous index
-        previousIndex = index; //儲存現在圖片的index 下次點擊時隱藏
-
+        imageDisplay.sprite = sprites[index]; //顯示現在的圖片
+        imageDisplay.enabled = true; // enable = true
+        previousIndex = index; // 把前一個圖片的索引值設為目前圖片的索引 用來下一張圖片顯示時隱藏
     }
 
     void HideSprite(int index)
     {
-        // Hide the sprite at the given index
         imageDisplay.enabled = false;
     }
 }
