@@ -14,7 +14,8 @@ public class GPTManager2 : MonoBehaviour
 {
     public Text gptOutputText;
     public Text text; 
-    public AudioSource audioSource; 
+    public AudioSource audioSource;
+    public string characterIntroduction;
 
     private OpenAIAPI api;
     private SpeechSynthesizer synthesizer;
@@ -22,7 +23,7 @@ public class GPTManager2 : MonoBehaviour
 
     void Start()
     {
-        api = new OpenAIAPI("//更改為OPENAI 的API"); //更改為OPENAI 的API
+        api = new OpenAIAPI("//嚙踝蕭麍記PENAI 嚙踝蕭API"); //嚙踝蕭麍記PENAI 嚙踝蕭API
         var settings = new JsonSerializerSettings
         {
             ContractResolver = new DefaultContractResolver
@@ -34,7 +35,7 @@ public class GPTManager2 : MonoBehaviour
 
         JsonConvert.DefaultSettings = () => settings;
 
-        var config = SpeechConfig.FromSubscription("更改為AZURE的API以及區域", "更改為AZURE的API以及區域"); // 更改為AZURE的API以及區域
+        var config = SpeechConfig.FromSubscription("嚙踝蕭麍蚊ZURE嚙踝蕭API嚙瘡嚙諄區堆蕭", "嚙踝蕭麍蚊ZURE嚙踝蕭API嚙瘡嚙諄區堆蕭"); // 嚙踝蕭麍蚊ZURE嚙踝蕭API嚙瘡嚙諄區堆蕭
         config.SpeechSynthesisLanguage = "zh-TW";
         config.SpeechSynthesisVoiceName = "zh-CN-XiaoyouNeural";
         var audioConfig = AudioConfig.FromDefaultSpeakerOutput();
@@ -45,9 +46,6 @@ public class GPTManager2 : MonoBehaviour
     {
         if (isSpeaking) return;
         isSpeaking = true;
-
-        string characterIntroduction = "他只會說繁體中文，她活力充沛且外向，每次說話不會超過30個字，會可能減短說的話。擁有超過十五年的工作經驗，是一名系統分析師，她對於系統分析的每個細節都了如指掌，並且能夠以清晰易懂的方式解釋技術概念。不論是面對初學者還是專業玩家的疑問，她都能夠提供深入且具有洞察力的回答。不僅在技術上精通，還擁有無比的熱情與承諾，始終致力於提供最佳的解決方案。";
-
         string userInput = text.text;
 
         if (string.IsNullOrEmpty(userInput))
