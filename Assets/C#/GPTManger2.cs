@@ -15,7 +15,8 @@ public class GPTManager2 : MonoBehaviour
 {
     public Text gptOutputText;
     public Text text; 
-    public AudioSource audioSource; 
+    public AudioSource audioSource;
+    public string characterIntroduction;
 
     private OpenAIAPI api;
     private SpeechSynthesizer synthesizer;
@@ -23,7 +24,7 @@ public class GPTManager2 : MonoBehaviour
 
     void Start()
     {
-        // 讀取OpenAI API密鑰
+        // 讀嚙踝蕭OpenAI API嚙皺嚙稻
         if (env.TryParseEnvironmentVariable("OPENAIAPI", out string openAiApiKey))
         {
             api = new OpenAIAPI(openAiApiKey);
@@ -33,7 +34,7 @@ public class GPTManager2 : MonoBehaviour
             Debug.LogError("Failed to read OpenAI API key from environment variables.");
             return;
         }
-        // 設置Json序列化設置
+        // 嚙稽嚙練Json嚙褒列嚙複設嚙練
         var settings = new JsonSerializerSettings
         {
             ContractResolver = new DefaultContractResolver
@@ -45,7 +46,7 @@ public class GPTManager2 : MonoBehaviour
 
         JsonConvert.DefaultSettings = () => settings;
 
-        // 讀取Azure API密鑰和區域
+        // 讀嚙踝蕭Azure API嚙皺嚙稻嚙瞎嚙誕堆蕭
         if (env.TryParseEnvironmentVariable("AZUREAPI", out string azureApiKey) && env.TryParseEnvironmentVariable("AZURE", out string azureRegion))
         {
             var config = SpeechConfig.FromSubscription(azureApiKey, azureRegion);
@@ -65,9 +66,6 @@ public class GPTManager2 : MonoBehaviour
     {
         if (isSpeaking) return;
         isSpeaking = true;
-
-        string characterIntroduction = "他只會說繁體中文，她活力充沛且外向，每次說話不會超過30個字，會可能減短說的話。擁有超過十五年的工作經驗，是一名系統分析師，她對於系統分析的每個細節都了如指掌，並且能夠以清晰易懂的方式解釋技術概念。不論是面對初學者還是專業玩家的疑問，她都能夠提供深入且具有洞察力的回答。不僅在技術上精通，還擁有無比的熱情與承諾，始終致力於提供最佳的解決方案。";
-
         string userInput = text.text;
 
         if (string.IsNullOrEmpty(userInput))
@@ -83,8 +81,8 @@ public class GPTManager2 : MonoBehaviour
             new ChatMessage(ChatMessageRole.User, userInput)
         };
 
-        // 處理API調用的邏輯
-        // 這裡您需要使用api來處理OpenAI的請求，並使用synthesizer來處理Azure的語音合成
+        // 嚙畿嚙緲API嚙調用迎蕭嚙豬選蕭
+        // 嚙緻嚙諒您嚙豎要嚙誕伐蕭api嚙諉處嚙緲OpenAI嚙踝蕭嚙請求嚙璀嚙衛使伐蕭synthesizer嚙諉處嚙緲Azure嚙踝蕭嚙緙嚙踝蕭嚙碼嚙踝蕭
 
         isSpeaking = false;
 
