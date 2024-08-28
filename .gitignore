@@ -70,4 +70,15 @@ crashlytics-build.properties
 # Exclude meta files in specific folders
 !/Assets/Model/**/*.meta
 !/Assets/Studio_2.fbm/**/*.meta
-
+# Ignore .env files
+.env
+# test file for Azure Blob Storage
+add_to_dvc.bat
+lfs_files.txt
+add_to_dvc.sh
+# ignore DVC
+.dvc/cache/
+.dvc/tmp/
+.dvc/config.local
+# track DVC 
+!*.dvc

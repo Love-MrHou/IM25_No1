@@ -59,3 +59,6 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+#filter
+# 取消對 Assets/Model 資料夾中所有檔案的 LFS 追蹤
+#Assets/Model/** -filter=lfs diff=lfs merge=lfs -text

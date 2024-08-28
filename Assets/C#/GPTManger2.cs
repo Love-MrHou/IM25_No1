@@ -10,6 +10,7 @@ using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
 using System.Threading.Tasks;
 using System;
+using CandyCoded.env;
 public class GPTManager2 : MonoBehaviour
 {
     public Text gptOutputText;
@@ -23,7 +24,17 @@ public class GPTManager2 : MonoBehaviour
 
     void Start()
     {
-        api = new OpenAIAPI("//��אּOPENAI ��API"); //��אּOPENAI ��API
+        // Ū��OpenAI API�K�_
+        if (env.TryParseEnvironmentVariable("OPENAIAPI", out string openAiApiKey))
+        {
+            api = new OpenAIAPI(openAiApiKey);
+        }
+        else
+        {
+            Debug.LogError("Failed to read OpenAI API key from environment variables.");
+            return;
+        }
+        // �]�mJson�ǦC�Ƴ]�m
         var settings = new JsonSerializerSettings
         {
             ContractResolver = new DefaultContractResolver
@@ -35,11 +46,20 @@ public class GPTManager2 : MonoBehaviour
 
         JsonConvert.DefaultSettings = () => settings;
 
-        var config = SpeechConfig.FromSubscription("��אּAZURE��API�H�ΰϰ�", "��אּAZURE��API�H�ΰϰ�"); // ��אּAZURE��API�H�ΰϰ�
-        config.SpeechSynthesisLanguage = "zh-TW";
-        config.SpeechSynthesisVoiceName = "zh-CN-XiaoyouNeural";
-        var audioConfig = AudioConfig.FromDefaultSpeakerOutput();
-        synthesizer = new SpeechSynthesizer(config, audioConfig);
+        // Ū��Azure API�K�_�M�ϰ�
+        if (env.TryParseEnvironmentVariable("AZUREAPI", out string azureApiKey) && env.TryParseEnvironmentVariable("AZURE", out string azureRegion))
+        {
+            var config = SpeechConfig.FromSubscription(azureApiKey, azureRegion);
+            config.SpeechSynthesisLanguage = "zh-TW";
+            config.SpeechSynthesisVoiceName = "zh-CN-XiaochenNeural";
+            var audioConfig = AudioConfig.FromDefaultSpeakerOutput();
+            synthesizer = new SpeechSynthesizer(config, audioConfig);
+        }
+        else
+        {
+            Debug.LogError("Failed to read Azure API key or region from environment variables.");
+            return;
+        }
     }
 
     public async void ProcessInputFromText()
@@ -56,10 +76,16 @@ public class GPTManager2 : MonoBehaviour
         }
 
         List<ChatMessage> messages = new List<ChatMessage>
-    {
-        new ChatMessage(ChatMessageRole.System, characterIntroduction),
-        new ChatMessage(ChatMessageRole.User, userInput)
-    };
+        {
+            new ChatMessage(ChatMessageRole.System, characterIntroduction),
+            new ChatMessage(ChatMessageRole.User, userInput)
+        };
+
+        // �B�zAPI�եΪ��޿�
+        // �o�̱z�ݭn�ϥ�api�ӳB�zOpenAI���ШD�A�èϥ�synthesizer�ӳB�zAzure���y���X��
+
+        isSpeaking = false;
+
 
         try
         {
