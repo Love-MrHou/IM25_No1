@@ -51,7 +51,7 @@ public class GPTManager2 : MonoBehaviour
         {
             var config = SpeechConfig.FromSubscription(azureApiKey, azureRegion);
             config.SpeechSynthesisLanguage = "zh-TW";
-            config.SpeechSynthesisVoiceName = "zh-CN-XiaochenNeural";
+            config.SpeechSynthesisVoiceName = "zh-CN-YunjianNeural";
             var audioConfig = AudioConfig.FromDefaultSpeakerOutput();
             synthesizer = new SpeechSynthesizer(config, audioConfig);
         }
